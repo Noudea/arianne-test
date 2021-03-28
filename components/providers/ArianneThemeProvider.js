@@ -1,13 +1,15 @@
-import { useState , useEffect } from 'react'
+import { useState , useEffect ,useContext } from 'react'
 import ThemeContext from '../contexts/ThemeContext'
 
-const ThemeProvider = ({children}) => {
+
+const ArianneThemeProvider = ({children}) => {
 
     const [theme, setTheme] = useState("light");
     const value = { 
         theme,
         setTheme,
     };
+    
     useEffect(() => {
         const localStorage = window.localStorage
         
@@ -17,6 +19,7 @@ const ThemeProvider = ({children}) => {
             setTheme(localStorage.getItem('Ariannetheme'))
         }
     }, [])
+
         return(
             <>
                 <style jsx>{`
@@ -29,4 +32,4 @@ const ThemeProvider = ({children}) => {
         )
 }
 
-export default ThemeProvider
+export default ArianneThemeProvider

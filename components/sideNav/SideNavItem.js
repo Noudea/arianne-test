@@ -5,13 +5,7 @@ import ThemeColors from '../themes/ThemeColors'
 
 const SideNavItem = ({ children, ...props }) => {
     const colors = ThemeColors[useContext(ThemeContext).theme]
-
     useEffect(() => {
-
-        if(props.color) {
-            setColor(props.color)
-        }
-        
     }, [colors])
 
 

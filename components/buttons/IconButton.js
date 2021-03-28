@@ -45,6 +45,7 @@ const IconButton = ({ children, ...props }) => {
 
     const xsmall = {
         height: 24,
+        padding: '4px 6px',
     }
 
     const small = {
@@ -54,12 +55,12 @@ const IconButton = ({ children, ...props }) => {
 
     const medium = {
         height: 40,
-        padding: '8px 12px',
+        padding: '8px 10px',
     }
 
     const large = {
         height: 48,
-        padding: '13px 16px',
+        padding: '10px 12px',
     }
 
     const onClick = (event) => {
@@ -151,7 +152,8 @@ const IconButton = ({ children, ...props }) => {
             <div>
                 <div className='container'>
                     <button className='button' onClick={onClick}>
-                        <img className='icon' src={props.iconSrc}></img>
+                        {props.iconSrc ? <img className='icon' src={props.iconSrc}></img>  : null}
+                        {props.svg ? props.svg : null}
                     </button>
                 </div>
             </div>

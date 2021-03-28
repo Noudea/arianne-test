@@ -59,7 +59,6 @@ const Tag = ({ children, ...props }) => {
     }, [props.theme])
 
     const close = () => {
-        console.log('close')
         setDisplay('none')
 
         if (props.onClick) {

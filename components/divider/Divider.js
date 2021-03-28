@@ -35,7 +35,7 @@ const Divider = (props) => {
                 margin:${margin}px auto;
                 width:${width};
                 height:${strokeWidth}px;
-                background-color:${colors ? colors.inverted : ThemeColors.light.inverted};
+                background-color:${colors ? colors.contrast : ThemeColors.light.contrast};
             }
             `}</style>
     </div>)

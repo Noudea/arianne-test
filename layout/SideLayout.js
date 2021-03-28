@@ -10,10 +10,11 @@ import SideNavHeader from '../components/sideNav/SideNavHeader';
 import SideNavItem from '../components/sideNav/SideNavItem';
 import ThemeColors from '../components/themes/ThemeColors';
 import Tooltip from '../components/tooltip/Tooltip';
-
+import GlobalStyle from '../components/themes/GlobalStyle'
+import LightDarkSwitch from '../components/switch/LightDarkSwitch';
+import SideNavDropDown from '../components/sideNav/SideNavDropDown';
 
 const SideLayout = ({ children, ...props }) => {
-    const { theme, setTheme } = useContext(ThemeContext);
     const { sideNavOpen, setSideNavOpen } = useContext(NavContext);
     const [navExpand, setNavExpand] = useState(false)
     const [marginLeft, setMarginLeft] = useState(84)
@@ -24,14 +25,6 @@ const SideLayout = ({ children, ...props }) => {
 
 
     useEffect(() => {},[navExpand])
-
-    const changetheme = () => {
-        if (theme === 'light') {
-            setTheme('dark')
-        } else {
-            setTheme('light')
-        }
-    }
 
     const expandNav = () => {
         setSideNavOpen(true)
@@ -61,7 +54,6 @@ const SideLayout = ({ children, ...props }) => {
             <style jsx>{`
                 .main {
                     margin-left : ${marginLeft}px;
-                    background-color : ${colors.background};
                 }
                 h4 {
                     padding: 0px 20px;
@@ -69,7 +61,6 @@ const SideLayout = ({ children, ...props }) => {
                 }
                 `}</style>
             <NavBar alignement="vertical">
-                <button onClick={changetheme}>CHANGETHEME</button>
                 <Tooltip textContent="this is a toolTip">
                     <IconButton
                         transparent
@@ -90,6 +81,7 @@ const SideLayout = ({ children, ...props }) => {
                     iconSrc="/svg/bell.svg"
                     onClick={openNav3}
                 ></IconButton>
+                <LightDarkSwitch color='red' outlined medium ></LightDarkSwitch>
                 <SideNav isOpen={navExpand}  targetedClass='main'>
                     {nav1 ?
                         <SideNavContainer>
@@ -119,12 +111,14 @@ const SideLayout = ({ children, ...props }) => {
                             <SideNavItem href='/components/tooltip'  width='100%'>
                                 ToolTip
                             </SideNavItem>
-                            <SideNavItem href='/components/button'  width='100%'>
-                                Button
-                            </SideNavItem>
-                            <SideNavItem href='/components/iconbutton'  width='100%'>
-                                IconButton
-                            </SideNavItem>
+                            <SideNavDropDown textContent='Button' width='100%'>
+                                <SideNavItem href='/components/button'  width='100%'>
+                                    Button
+                                </SideNavItem>
+                                <SideNavItem href='/components/iconbutton'  width='100%'>
+                                    IconButton
+                                </SideNavItem>
+                            </SideNavDropDown>
                             <SideNavItem href='/components/divider'  width='100%'>
                                 Divider
                             </SideNavItem>
@@ -169,6 +163,7 @@ const SideLayout = ({ children, ...props }) => {
                     {nav3 ? <p>Nav3</p> : null}
                 </SideNav>
             </NavBar>
+                <GlobalStyle colors = {colors}/>
                 <main className='main'>{children}</main>
             {/* mettre le footer */}
         </>

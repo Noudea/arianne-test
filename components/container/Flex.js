@@ -1,10 +1,9 @@
 const Flex = ({children,...props}) => {
-
     return(<div className='flexContainer'>
         <style jsx>{`
             .flexContainer {
                 display:flex;
-                flex-direction:${props.flexDirection};
+                flex-direction:${props.flexDirection ? props.flexDirection : 'row'};
                 justify-content:${props.justifyContent};
                 align-items:${props.alignItems}
             }

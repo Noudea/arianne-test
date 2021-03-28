@@ -1,12 +1,12 @@
 import NavProvider from "./NavProvider"
-import ThemeProvider from "./ThemeProvider"
+import ArianneThemeProvider from "./ArianneThemeProvider"
 
 const GeneralProvider = ({children}) => {
     return(
         <NavProvider>
-            <ThemeProvider>
+            <ArianneThemeProvider>
                 {children}
-            </ThemeProvider>
+            </ArianneThemeProvider>
         </NavProvider>
     )
 }
