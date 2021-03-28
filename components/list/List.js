@@ -4,6 +4,15 @@ import Divider from '../divider/Divider'
 import ThemeColors from '../themes/ThemeColors'
 import ListItem from './ListItem'
 
+//props
+// data
+//searchable
+// xsmal small medium large
+// title
+// ordered
+
+
+
 const List = (props) => {
     const colors = ThemeColors[useContext(ThemeContext).theme]
     const [data, setData] = useState(props.data)
@@ -85,7 +94,6 @@ const List = (props) => {
                                 .map((filteredData, index) => (
                                     <ListItem
                                         margin={margin}
-                                        theme={props.theme}
                                         key={index}
                                     >
                                         {filteredData}
