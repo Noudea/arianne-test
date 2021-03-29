@@ -4,42 +4,6 @@ import ThemeColors from '../themes/ThemeColors'
 import ThemeContext from '../contexts/ThemeContext'
 
 const Button = ({ children, ...props }) => {
-    const [properties, setProperties] = useState(false)
-    const [fontWeight, setFontWeight] = useState(400)
-    const [border, setBorder] = useState('none')
-    const colors = ThemeColors[useContext(ThemeContext).theme]
-
-    useEffect(() => {
-        if (props.xsmall) {
-            setProperties(xsmall)
-        }
-        if (props.small) {
-            setProperties(small)
-        }
-        if (props.medium) {
-            setProperties(medium)
-        }
-        if (props.large) {
-            setProperties(large)
-        }
-        if (props.bold) {
-            setFontWeight(600)
-        }
-        if (props.outlined) {
-            if (colors) {
-                setBorder('solid 1px ' + colors.contrast)
-            }
-            if (!colors) {
-                setBorder('solid 1px ' + ThemeColors.light.contrast)
-            }
-            if (props.color) {
-                setBorder('solid 1px ' + props.color)
-            }
-        }
-        if (props.transparent) {
-            setBorder('none')
-        }
-    }, [colors])
 
     const xsmall = {
         height: 24,
@@ -73,6 +37,43 @@ const Button = ({ children, ...props }) => {
         iconWidth: 20,
     }
 
+    const [properties, setProperties] = useState(medium)
+    const [fontWeight, setFontWeight] = useState(400)
+    const [border, setBorder] = useState('none')
+    const colors = ThemeColors[useContext(ThemeContext).theme]
+
+    useEffect(() => {
+        if (props.size === 'xs') {
+            setProperties(xsmall)
+        }
+        if (props.size === 'sm') {
+            setProperties(small)
+        }
+        if (props.size === 'md') {
+            setProperties(medium)
+        }
+        if (props.size === 'lg') {
+            setProperties(large)
+        }
+        if (props.bold) {
+            setFontWeight(600)
+        }
+        if (props.outlined) {
+            if (colors) {
+                setBorder('solid 1px ' + colors.contrast)
+            }
+            if (!colors) {
+                setBorder('solid 1px ' + ThemeColors.light.contrast)
+            }
+            if (props.color) {
+                setBorder('solid 1px ' + props.color)
+            }
+        }
+        if (props.transparent) {
+            setBorder('none')
+        }
+    }, [colors])
+
     const onClick = (event) => {
         let rect = event.target.getBoundingClientRect()
         let x = event.clientX - rect.left
@@ -90,10 +91,10 @@ const Button = ({ children, ...props }) => {
         rippleElement.style.position = 'absolute'
         rippleElement.style.left = x + 'px'
         rippleElement.style.top = y + 'px'
-        if(colors) {
+        if (colors) {
             rippleElement.style.background = colors.inverted
         }
-        if(!colors) {
+        if (!colors) {
             rippleElement.style.background = ThemeColors.light.inverted
         }
         if (props.outlined) {
@@ -119,13 +120,7 @@ const Button = ({ children, ...props }) => {
                     align-items: center;
                     position: relative;
                     height: ${properties.height}px;
-                    background-color: ${props.outlined || props.transparent
-                        ? 'transparent'
-                        : props.color
-                        ? props.color
-                        : colors
-                        ? colors.main
-                        : ThemeColors.light.main};
+                    background-color: ${props.outlined || props.transparent ? 'transparent' : props.color ? props.color : props.accent ? colors ? colors.accent : ThemeColors.light.accent : colors ? colors.main : ThemeColors.light.main};
                     border: ${border};
                     border-radius: 6px;
                     padding: ${properties.padding};
@@ -134,13 +129,9 @@ const Button = ({ children, ...props }) => {
                     line-height: ${properties.lineHeight}px;
                     cursor: pointer;
                     outline: none;
-                    color: ${props.textColor
-                        ? props.textColor
-                        : props.color
-                        ? props.color
-                        : colors
-                        ? colors.contrast
-                        : ThemeColors.light.contrast};
+                    color: ${props.textColor ? props.textColor : props.color
+                    ? props.color : props.accent ? '#FFFFFF' : colors
+                    ? colors.contrast : ThemeColors.light.contrast};
                     overflow: hidden;
                 }
                 .button:hover {
@@ -155,8 +146,8 @@ const Button = ({ children, ...props }) => {
                 .iconRight {
                     width: ${properties.iconWidth}px;
                     filter: ${colors
-                        ? colors.invertedFilter
-                        : ThemeColors.light.invertedFilter};
+                    ? colors.invertedFilter
+                    : ThemeColors.light.invertedFilter};
                 }
                 .iconLeft {
                     margin-right: 8px;
@@ -164,11 +155,15 @@ const Button = ({ children, ...props }) => {
                 .iconRight {
                     margin-left: 8px;
                 }
+                .customCss {
+                    ${props.customCss}
+                }
+
             `}</style>
             <div>
                 <div className="container">
                     <button
-                        className="button"
+                        className="button customCss"
                         onClick={onClick}
                         type={props.submit ? 'submit' : 'button'}
                     >

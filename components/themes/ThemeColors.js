@@ -4,14 +4,16 @@ const ThemeColors = {
         main: '#f7f7fa',
         contrast : '#575757',
         inverted : '#0f131a',
-        invertedFilter : 'invert(32%) sepia(0%) saturate(48%) hue-rotate(187deg) brightness(102%) contrast(92%)'
+        invertedFilter : 'invert(32%) sepia(0%) saturate(48%) hue-rotate(187deg) brightness(102%) contrast(92%)',
+        accent: '#3498ff'
     },
     dark: {
         background: '#0f131a',
         main: '#1a1d24',
         contrast : '#e9ebf0',
         inverted : '#FFFFFF',
-        invertedFilter : 'invert(91%) sepia(3%) saturate(707%) hue-rotate(196deg) brightness(107%) contrast(88%)'
+        invertedFilter : 'invert(91%) sepia(3%) saturate(707%) hue-rotate(196deg) brightness(107%) contrast(88%)',
+        accent: '#169de0'
     },
 
 
