@@ -22,16 +22,16 @@ const List = (props) => {
     const [margin, setMargin] = useState(20)
 
     useEffect(() => {
-        if (props.xsmall) {
+        if (props.size ===  'xs') {
             setMargin(8)
         }
-        if (props.small) {
+        if (props.size ===  'small') {
             setMargin(13)
         }
-        if (props.medium) {
+        if (props.size ===  'md') {
             setMargin(20)
         }
-        if (props.large) {
+        if (props.size ===  'lg') {
             setMargin(28)
         }
         setIsLoaded(true)
@@ -92,12 +92,12 @@ const List = (props) => {
                             {data
                                 .filter((data) => data.includes(inputValue))
                                 .map((filteredData, index) => (
-                                    <ListItem
+                                    <List.Item 
                                         margin={margin}
                                         key={index}
                                     >
                                         {filteredData}
-                                    </ListItem>
+                                    </List.Item >
                                 ))}
                         </ol>
                     ) : (
@@ -105,13 +105,13 @@ const List = (props) => {
                             {data
                                 .filter((data) => data.includes(inputValue))
                                 .map((filteredData, index) => (
-                                    <ListItem
+                                    <List.Item 
                                         margin={margin}
                                         theme={props.theme}
                                         key={index}
                                     >
                                         {filteredData}
-                                    </ListItem>
+                                    </List.Item >
                                 ))}
                         </ul>
                     )}
@@ -120,5 +120,7 @@ const List = (props) => {
         </div>
     )
 }
+
+List.Item = ListItem
 
 export default List

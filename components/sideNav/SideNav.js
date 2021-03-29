@@ -2,6 +2,10 @@ import { useState, useEffect, useContext } from 'react'
 import NavContext from '../contexts/NavContext'
 import ThemeContext from '../contexts/ThemeContext'
 import ThemeColors from '../themes/ThemeColors'
+import SideNavContainer from './SideNavContainer'
+import SideNavDropDown from './SideNavDropDown'
+import SideNavHeader from './SideNavHeader'
+import SideNavItem from './SideNavItem'
 
 const SideNav = ({ children, ...props }) => {
     // const [isOpen, setIsOpen] = useState(false)
@@ -183,5 +187,11 @@ const SideNav = ({ children, ...props }) => {
         </>
     )
 }
+
+
+SideNav.Container = SideNavContainer
+SideNav.Dropdown = SideNavDropDown
+SideNav.Header = SideNavHeader
+SideNav.Item = SideNavItem
 
 export default SideNav

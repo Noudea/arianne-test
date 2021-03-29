@@ -28,13 +28,13 @@ const Tag = ({ children, ...props }) => {
     const [display, setDisplay] = useState('flex')
 
     useEffect(() => {
-        if (props.small) {
+        if (props.size ===  'small') {
             setProperties(small)
         }
-        if (props.medium) {
+        if (props.size ===  'md') {
             setProperties(medium);
         }
-        if (props.large) {
+        if (props.size ===  'lg') {
             setProperties(large)
         }
         if (props.bold) {

@@ -11,16 +11,16 @@ const IconButton = ({ children, ...props }) => {
     const colors = ThemeColors[useContext(ThemeContext).theme]
 
     useEffect(() => {
-        if (props.xsmall) {
+        if (props.size ===  'xs') {
             setProperties(xsmall)
         }
-        if (props.small) {
+        if (props.size ===  'small') {
             setProperties(small)
         }
-        if (props.medium) {
+        if (props.size ===  'md') {
             setProperties(medium)
         }
-        if (props.large) {
+        if (props.size ===  'lg') {
             setProperties(large)
         }
         if (props.outlined) {

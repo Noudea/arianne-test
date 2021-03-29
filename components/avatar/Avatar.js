@@ -31,19 +31,19 @@ const Avatar = (props) => {
     const [borderRadius,setBorderRadius] = useState(50)
 
     useEffect(() => {
-        if (props.xsmall) {
+        if (props.size ===  'xs') {
             setSize(xsmall)
         }
-        if (props.small) {
+        if (props.size ===  'small') {
             setSize(small)
         }
-        if (props.medium) {
+        if (props.size ===  'md') {
             setSize(medium)
         }
-        if (props.large) {
+        if (props.size ===  'lg') {
             setSize(large)
         }
-        if (props.xlarge) {
+        if (props.size ===  'xl') {
             setSize(xlarge)
         }
 

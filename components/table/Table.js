@@ -86,50 +86,11 @@ const Table = (props) => {
                         ))}
                     </tbody>
                 </table>
-
-                {/* <table>
-  <caption>Récapitulatif des groupes punk les plus célébres du RU</caption>
-  <thead>
-    <tr>
-      <th scope="col">Groupe</th>
-      <th scope="col">Année de formation</th>
-      <th scope="col">Nombre d'albums</th>
-      <th scope="col">Morceau le plus célèbre</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Buzzcocks</th>
-      <td>1976</td>
-      <td>9</td>
-      <td>Ever fallen in love (with someone you shouldn't've)</td>
-    </tr>
-    <tr>
-      <th scope="row">The Clash</th>
-      <td>1976</td>
-      <td>6</td>
-      <td>London Calling</td>
-    </tr>
-
-      ... quelques lignes supprimées pour condenser le texte
-
-    <tr>
-      <th scope="row">The Stranglers</th>
-      <td>1974</td>
-      <td>17</td>
-      <td>No More Heroes</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <th scope="row" colspan="2">Total albums</th>
-      <td colspan="2">77</td>
-    </tr>
-  </tfoot>
-</table> */}
             </div>
         </>
     )
 }
+
+
 
 export default Table

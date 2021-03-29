@@ -14,16 +14,16 @@ const Dropdown = ({ children, ...props }) => {
     )
 
     useEffect(() => {
-        if (props.xsmall) {
+        if (props.size === 'xsmall') {
             setProperties(xsmall)
         }
-        if (props.small) {
+        if (props.size === 'small') {
             setProperties(small)
         }
-        if (props.medium) {
+        if (props.size === 'medium') {
             setProperties(medium)
         }
-        if (props.large) {
+        if (props.size === 'large') {
             setProperties(large)
         }
         if (props.bold) {
