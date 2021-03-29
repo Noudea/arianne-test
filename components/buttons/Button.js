@@ -3,6 +3,21 @@ import gsap from 'gsap'
 import ThemeColors from '../themes/ThemeColors'
 import ThemeContext from '../contexts/ThemeContext'
 
+
+//size
+//bold
+//outlined
+//color
+//transparent
+//onClick
+//accent
+//customCss
+//submit
+//iconLeft
+//iconRight
+//iconSrc
+
+
 const Button = ({ children, ...props }) => {
 
     const xsmall = {
@@ -129,9 +144,7 @@ const Button = ({ children, ...props }) => {
                     line-height: ${properties.lineHeight}px;
                     cursor: pointer;
                     outline: none;
-                    color: ${props.textColor ? props.textColor : props.color
-                    ? props.color : props.accent ? '#FFFFFF' : colors
-                    ? colors.contrast : ThemeColors.light.contrast};
+                    color: ${props.textColor ? props.textColor : props.color ? props.color : props.accent ? '#FFFFFF' : colors ? colors.contrast : ThemeColors.light.contrast};
                     overflow: hidden;
                 }
                 .button:hover {

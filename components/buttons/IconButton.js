@@ -5,7 +5,30 @@ import ThemeContext from '../contexts/ThemeContext'
 
 
 const IconButton = ({ children, ...props }) => {
-    const [properties, setProperties] = useState(false)
+
+    
+    const xsmall = {
+        height: 24,
+        padding: '4px 6px',
+    }
+
+    const small = {
+        height: 32,
+        padding: '6px 8px',
+    }
+
+    const medium = {
+        height: 40,
+        padding: '8px 10px',
+    }
+
+    const large = {
+        height: 48,
+        padding: '10px 12px',
+    }
+
+
+    const [properties, setProperties] = useState(medium)
     const [border, setBorder] = useState('none')
     const [borderRadius, setBorderRadius] = useState('6px')
     const colors = ThemeColors[useContext(ThemeContext).theme]
@@ -42,26 +65,6 @@ const IconButton = ({ children, ...props }) => {
         }
 
     }, [colors])
-
-    const xsmall = {
-        height: 24,
-        padding: '4px 6px',
-    }
-
-    const small = {
-        height: 32,
-        padding: '6px 8px',
-    }
-
-    const medium = {
-        height: 40,
-        padding: '8px 10px',
-    }
-
-    const large = {
-        height: 48,
-        padding: '10px 12px',
-    }
 
     const onClick = (event) => {
         let rect = event.target.getBoundingClientRect();
