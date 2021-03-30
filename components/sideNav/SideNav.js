@@ -113,8 +113,8 @@ const SideNav = ({ children, ...props }) => {
                     width: 24px;
                     height: 24px;
                     background-color: ${colors
-                        ? colors.inverted
-                        : ThemeColors.light.inverted};
+                        ? colors.contrastStrong
+                        : ThemeColors.light.contrastStrong};
                     border: none;
                     border-radius: 50%;
                     cursor: pointer;

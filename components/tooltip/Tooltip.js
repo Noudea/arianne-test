@@ -32,7 +32,7 @@ const Tooltip = ({ children, ...props }) => {
                     left: 110%;
                     top: 25%;
                     height: 20px;
-                    background-color: ${colors ? colors.inverted : ThemeColors.dark.inverted};
+                    background-color: ${colors ? colors.contrastStrong : ThemeColors.dark.contrastStrong};
                     white-space: nowrap;
                     overflow-wrap: break-word;
                     padding: 5px;
@@ -54,7 +54,7 @@ const Tooltip = ({ children, ...props }) => {
                     left: -6px;
                     margin-top: -6px;
                     border-width: 6px 6px 6px 0;
-                    border-right-color: ${colors ? colors.inverted : ThemeColors.dark.inverted};
+                    border-right-color: ${colors ? colors.contrastStrong : ThemeColors.dark.contrastStrong};
                     top: 50%;
                     z-index:9999;
                 }

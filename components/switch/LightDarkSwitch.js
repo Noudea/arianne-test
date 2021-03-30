@@ -36,8 +36,10 @@ const LightDarkSwitch = ({ children, ...props }) => {
     const changetheme = () => {
         if (theme === 'light') {
             setTheme('dark')
+            localStorage.setItem('Ariannetheme','dark')
         } else {
             setTheme('light')
+            localStorage.setItem('Ariannetheme', 'light')
         }
     }
 
@@ -157,7 +159,7 @@ const LightDarkSwitch = ({ children, ...props }) => {
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
-                                fill={props.color ? props.color : colors.inverted}
+                                fill={props.color ? props.color : colors.contrastStrong}
                             >
                                 <g data-name="Layer 2">
                                     <g data-name="moon">
@@ -175,7 +177,7 @@ const LightDarkSwitch = ({ children, ...props }) => {
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
-                                fill={props.color ? props.color : colors.inverted}
+                                fill={props.color ? props.color : colors.contrastStrong}
                             >
                                 <g data-name="Layer 2">
                                     <g data-name="sun">

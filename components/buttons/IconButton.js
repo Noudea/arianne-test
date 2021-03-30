@@ -85,10 +85,10 @@ const IconButton = ({ children, ...props }) => {
         rippleElement.style.left = x + 'px'
         rippleElement.style.top = y + 'px'
         if(colors) {
-            rippleElement.style.background = colors.inverted
+            rippleElement.style.background = colors.contrastStrong
         }
         if(!colors) {
-            rippleElement.style.background = ThemeColors.light.inverted
+            rippleElement.style.background = ThemeColors.light.contrastStrong
         }
         if (props.outlined) {
             rippleElement.style.background = props.color
@@ -143,8 +143,8 @@ const IconButton = ({ children, ...props }) => {
                  .icon {
                     width: ${properties.iconWidth}px;
                     filter : ${colors
-                        ? colors.invertedFilter
-                        : ThemeColors.light.invertedFilter};
+                        ? colors.contrastStrongFilter
+                        : ThemeColors.light.contrastStrongFilter};
                 }
                 img {
                     pointer-events: none;

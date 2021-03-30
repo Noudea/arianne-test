@@ -8,6 +8,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background-color : ${props => (props.colors ? props.colors.background : 'black')}
   }
+  
+  * {
+  box-sizing: border-box;
+    }
+
 `;
  
 export default GlobalStyle;

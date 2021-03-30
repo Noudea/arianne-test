@@ -94,8 +94,8 @@ const Tag = ({ children, ...props }) => {
         .iconLeft, .iconRight {
             width:${properties.iconWidth}px;
             filter : ${colors
-                        ? colors.invertedFilter
-                        : ThemeColors.light.invertedFilter};
+                        ? colors.contrastStrongFilter
+                        : ThemeColors.light.contrastStrongFilter};
         }
         .iconLeft {
             margin-right:8px;
