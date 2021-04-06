@@ -31,8 +31,8 @@ const modal = () => {
         p {margin:0px;}
 
         `}</style>
-        <Notification isOpen={notification}></Notification>
-        <Notification isOpen={true}></Notification>
+        {/* <Notification isOpen={notification}></Notification>
+        <Notification isOpen={true}></Notification> */}
         <Button onClick={showNotification} onClose={showNotification} medium>Open Notification</Button>
         <Button  onClick={showModal} onClose={showModal} medium>Open Modal</Button>
         <Modal backdrop size='sm' show={show} onAccept={onAccept} onClose={onClose}>

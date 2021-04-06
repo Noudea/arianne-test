@@ -44,15 +44,21 @@ const Modal = ({ children, ref, ...props }) => {
     }
 
     return (
-        <>
+        <div className='modalContainer'>
             <style jsx>{`
+
+
+                .modalContainer {
+                }
                 .container {
                     width: ${props.width ? props.width : '600px'};
                     min-height: 200px;
                     max-height: 900px;
                     background-color: red;
-                    position: relative;
-                    margin: auto;
+                    position: absolute;
+                    top:50%;
+                    left:50%;
+                     
                     z-index: 100000;
                     background-color: ${colors
                         ? colors.main
@@ -208,7 +214,7 @@ const Modal = ({ children, ref, ...props }) => {
                     </div>
                 </div>
             </>) : null}
-        </>
+        </div>
     )
 }
 
